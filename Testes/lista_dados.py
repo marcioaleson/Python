@@ -23,4 +23,9 @@ class Column:
             except:
                 return False
             return True
-            
+
+class ColumnTest(unittest.TestCase):
+    def test_vaildate_bigint(self):
+        self.assertTrue(Column.validate('bigint',100))
+        self.assertTrue(not Column.validate('bigint',10.1))
+        self.
