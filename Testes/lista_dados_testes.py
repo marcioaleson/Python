@@ -1,6 +1,7 @@
 # encoding: utf-8
 
-from domein import Column
+from column import Column
+import unittest
 
 class ColumnTest(unittest.TestCase):
     def test_validate_bigint(self):
