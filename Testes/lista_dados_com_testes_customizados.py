@@ -46,4 +46,20 @@ class HTMLTestResult(unittest.TestResult):
         self.current['reason'] = err
         self.newTest()
 
-    
+class HTMLTestRunner:
+    def run(self, test):
+        result = HTMLTestResult(self)
+        rest.run(result)
+        table = ''
+        for item in result.infos:
+            if item['result'] == 'ok'
+                 table += OK_TD.format(item['id'])
+            else:
+                table += ERR_TD.format(item['id'])
+
+        print(HTML.format(table))
+        return result
+
+if __name__ == "__main__":
+    suite = unittest.TestLoader()discover('.')
+    HTMLTestRunner().run(suite)
