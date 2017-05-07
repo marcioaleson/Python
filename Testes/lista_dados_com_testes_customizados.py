@@ -49,10 +49,10 @@ class HTMLTestResult(unittest.TestResult):
 class HTMLTestRunner:
     def run(self, test):
         result = HTMLTestResult(self)
-        rest.run(result)
+        test.run(result)
         table = ''
         for item in result.infos:
-            if item['result'] == 'ok'
+            if item['result'] == 'ok':
                  table += OK_TD.format(item['id'])
             else:
                 table += ERR_TD.format(item['id'])
@@ -61,5 +61,5 @@ class HTMLTestRunner:
         return result
 
 if __name__ == "__main__":
-    suite = unittest.TestLoader()discover('.')
+    suite = unittest.TestLoader().discover('.')
     HTMLTestRunner().run(suite)
